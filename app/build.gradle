@@ -2,11 +2,11 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-
+    id 'com.google.devtools.ksp'
 }
 
 android {
-    namespace 'cl.samf.superheroescomics'
+    namespace "cl.samf.superheroescomics"
     compileSdk 33
 
     defaultConfig {
@@ -26,61 +26,60 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '1.8'
     }
 
     buildFeatures {
         viewBinding true
     }
-
+    allprojects {
+        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+            kotlinOptions {
+                jvmTarget = "1.8"
+            }
+        }
+    }
 }
-
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+
+    //Persistencia Room
+    implementation 'androidx.room:room-runtime:2.5.2'
+    annotationProcessor 'androidx.room:room-compiler:2.5.2'
+    implementation 'androidx.room:room-ktx:2.5.2'
+    ksp 'androidx.room:room-compiler:2.5.2'
+
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
+    //Agrega para las corrutinas
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
-    kotlin
+    //Navegacion
     def nav_version = "2.6.0"
-    // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    //coil
-    implementation 'io.coil-kt:coil:2.4.0'
-
-    def room_version = "2.5.2"
-
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-
-    // To use Kotlin annotation processing tool (kapt)
-    kapt "androidx.room:room-compiler:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-
-
-    def retroVersion = "2.9.0"
-    implementation "com.squareup.retrofit2:retrofit:$retroVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$retroVersion"
+    //https://square.github.io/retrofit/ para consumo de API
+    def retro_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retro_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retro_version"
 
     testImplementation 'junit:junit:4.13.2'
-
-    //that
-    testImplementation 'androidx.test.ext:truth:1.5.0'
-
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    //Test
     androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
-    androidTestImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation "androidx.room:room-testing:2.5.2"
     androidTestImplementation 'androidx.test.ext:truth:1.5.0'
 
-
+    //Coil Imagenes
+    implementation 'io.coil-kt:coil:2.4.0'
 }

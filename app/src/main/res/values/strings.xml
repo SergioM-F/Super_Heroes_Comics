@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Super Heroes Comics</string>
+    <string name="id">Id</string>
+    <string name="name_heroe">Name Heroe</string>
+    <string name="origen">Origen</string>
+    <string name="imagen_link">Imagen Heroe</string>
+    <string name="poder">Poder Heroe</string>
+    <string name="color">color</string>
+    <string name="traduccion">Traduccion</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">Todo</string>
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/heroeListFragment">
+
+    <fragment
+        android:id="@+id/heroeListFragment"
+        android:name="cl.samf.superheroescomics.presentation.HeroeListFragment"
+        android:label="fragment_heroe_list"
+        tools:layout="@layout/fragment_heroe_list" />
+</navigation>
