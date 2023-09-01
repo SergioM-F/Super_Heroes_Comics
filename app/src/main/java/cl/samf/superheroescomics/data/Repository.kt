@@ -55,8 +55,7 @@ class Repository(private val heroeApi: HeroeApi, private val heroeDao: HeroeDao)
 
 }
 
-fun HeroeList.convert(): HeroeEntity =
-    HeroeEntity(this.id, this.nombre, this.origen, this.imagenLink, this.poder, this.anio_creacion)
+
 
 fun DetailsHeroe.convertDetails(): DetailsHeroeEntity =
     DetailsHeroeEntity(this.id, this.nombre, this.origen, this.imagenLink, this.poder, this.Año_creacion, this.color, this.traduccion)
