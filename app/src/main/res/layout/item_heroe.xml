@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/imageViewTerreno"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/imagen_link"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -34,22 +34,23 @@
 
             <TextView
                 android:id="@+id/textViewName"
-                android:layout_width="100dp"
+                android:layout_width="150dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center_horizontal"
                 android:text="@string/name_heroe"
                 android:textColor="@color/primary_text"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageViewTerreno"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/imageViewTerreno"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewTerreno" />
 
             <TextView
-                android:id="@+id/textViewPrice"
+                android:id="@+id/textViewOrigen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/origen"
                 android:textColor="@color/secondary_text"
                 android:textSize="16sp"

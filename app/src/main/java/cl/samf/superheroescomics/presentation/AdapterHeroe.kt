@@ -34,13 +34,14 @@ class AdapterHeroe: RecyclerView.Adapter<AdapterHeroe.HeroeViewHolder>() {
         fun bind(heroe: HeroeEntity) {
             binding.imageViewTerreno.load(heroe.imagenLink)
             binding.textViewName.text = heroe.nombre
+            binding.textViewOrigen.text = heroe.origen
 
 
 
             binding.imageViewTerreno.setOnClickListener{
                 val bundle = Bundle()
                 bundle.putInt("id", heroe.id)
-              //  Navigation.findNavController(binding.root).navigate(R.id.action_phoneListFragment_to_phoneDetailsFragment, bundle)
+                Navigation.findNavController(binding.root).navigate(R.id.action_heroeListFragment_to_detailsFragment, bundle)
             }
 
         }

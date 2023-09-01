@@ -9,5 +9,18 @@
         android:id="@+id/heroeListFragment"
         android:name="cl.samf.superheroescomics.presentation.HeroeListFragment"
         android:label="fragment_heroe_list"
-        tools:layout="@layout/fragment_heroe_list" />
+        tools:layout="@layout/fragment_heroe_list" >
+        <action
+            android:id="@+id/action_heroeListFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="cl.samf.superheroescomics.presentation.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_heroeListFragment"
+            app:destination="@id/heroeListFragment" />
+    </fragment>
 </navigation>
