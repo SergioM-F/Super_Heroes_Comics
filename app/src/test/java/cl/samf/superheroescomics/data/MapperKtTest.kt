@@ -9,7 +9,7 @@ class MapperKtTest {
 
     @Test
     fun convert() {
-        //(this.id, this.nombre, this.origen, this.imagenLink, this.poder, this.anio_creacion)
+
         //given
         val heroe = HeroeList(1, "super", "krypton", "example.com", "volar", 1000)
         //when

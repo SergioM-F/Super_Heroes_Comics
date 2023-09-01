@@ -81,6 +81,10 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:2.5.2"
     androidTestImplementation 'androidx.test.ext:truth:1.5.0'
 
+    //that
+    testImplementation 'androidx.test.ext:truth:1.5.0'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+
     //Coil Imagenes
     implementation 'io.coil-kt:coil:2.4.0'
 }
