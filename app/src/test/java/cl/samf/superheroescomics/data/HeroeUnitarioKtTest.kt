@@ -5,7 +5,7 @@ import org.junit.Assert.*
 
 import org.junit.Test
 
-class MapperKtTest {
+class HeroeUnitarioKtTest {
 
     @Test
     fun convert() {
